@@ -1,0 +1,32 @@
+{
+  "name": "sync-project-sekai-notion",
+  "version": "2.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "format": "npx prettier ./src --write",
+    "build": "npm run format && node build.js && cp ./src/appsscript.json ./dist/appsscript.json",
+    "push:develop": "cp .clasp.json.dev .clasp.json && clasp push",
+    "push:production": "cp .clasp.json.prod .clasp.json && clasp push",
+    "open": "clasp open",
+    "deploy:develop": "npm run build && npm run push:develop",
+    "deploy:production": "npm run build && npm run push:production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "volta": {
+    "node": "20.10.0"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.82",
+    "clasp": "^1.0.0",
+    "esbuild": "^0.20.1",
+    "esbuild-gas-plugin": "^0.8.0",
+    "prettier": "3.4.2",
+    "typescript": "^5.3.3"
+  }
+}
