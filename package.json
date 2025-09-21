@@ -21,7 +21,7 @@
     "node": "20.10.0"
   },
   "devDependencies": {
-    "@google/clasp": "^2.4.2",
+    "@google/clasp": "2.5.0",
     "@types/google-apps-script": "^1.0.82",
     "clasp": "^1.0.0",
     "esbuild": "^0.20.1",
