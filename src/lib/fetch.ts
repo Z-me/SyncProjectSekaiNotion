@@ -2,13 +2,13 @@ import type { DatabaseResponse } from '@/lib/types';
 
 const api = (dbId: string, cursor?: string): DatabaseResponse[] => {
   Logger.log(`cursor: ${cursor}`);
-  const url = `https://api.notion.com/v1/databases/${dbId}/query`;
+  const url = `https://api.notion.com/v1/data_sources/${dbId}/query`;
   const token =
     PropertiesService.getScriptProperties().getProperty('NotionToken');
   const headers = {
     'content-type': 'application/json; charset=UTF-8',
     Authorization: `Bearer ${token}`,
-    'Notion-Version': '2022-06-28',
+    'Notion-Version': '2025-09-03',
   };
   const payload = {
     start_cursor: cursor,
